@@ -4,7 +4,7 @@ from Settings import port
 
 def run():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket initialization
-    client.connect(('127.0.0.1', port))  # connecting client to server
+    client.connect(('louisyoung.work', port))  # connecting client to server
     client.send("Send".encode())
     print("start --- >")
 
