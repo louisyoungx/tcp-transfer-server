@@ -44,9 +44,9 @@ python3 runserver.py
 python3 sendclient.py
 ```
 
-用浏览器打开Client目录下的TCP_Client.html
+用浏览器打开/Client目录下的ReceiveClient.html
 
-浏览器控制台Console中显示Sender发送的内容
+浏览器控制台Console中显示sendclient.py中发送的内容
 
 ## 基本原理
 
