@@ -1,7 +1,7 @@
 import socket
 import threading  # Libraries import
 
-from Core.WebSocket import WebSocket
+from Core.WebSocket.WebSocket import WebSocket
 from Settings import port
 
 def broadcast(message):  # broadcast function declaration
@@ -44,8 +44,13 @@ def run():  # accepting multiple receivers
     while True:
         client, address = server.accept()
         key = client.recv(1024)
-        value = key.decode()
-        if len(value) > 20:
+        print(key)
+        try:
+            value = key.decode()
+        except:
+            print(key)
+            value = ""
+        if "GET / HTTP/1.1" in value:
             print("====== Receive Connection Built ======")
             Receiver = WebSocket(client)
             Receiver.init(key)

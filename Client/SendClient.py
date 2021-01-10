@@ -1,10 +1,11 @@
 import socket, threading
 
-from Settings import port
+from Settings import port, server_host
+
 
 def run():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket initialization
-    client.connect(('louisyoung.work', port))  # connecting client to server
+    client.connect((server_host, port))  # connecting client to server
     client.send("Send".encode())
     print("start --- >")
 

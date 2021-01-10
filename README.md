@@ -14,17 +14,18 @@
 ```
 TCP Transfer Server
 ├── Client
-│   ├── Client.py
-│   ├── TCP_Client.html
+│   ├── ReceiveClient.html
+│   ├── SendClient.py
 ├── Core
-│   ├── Utils.py
-│   ├── WebSocket.py
-│   ├── core.py
-│   ├── manage.py
-│   └── run.py
+│   ├── WebSocket
+│   │   ├── Utils.py
+│   │   ├── WebSocket.py
+│   │   ├── main.py
+│   │   └── manage.py
+│   └── core.py
 ├── Settings.py
-├── runclient.py
-└── runserver.py
+├── runserver.py
+└── sendclient.py
 ```
 
 ## 快速上手
@@ -40,10 +41,10 @@ cd tcp_-transfer_-server
 python3 runserver.py
 
 # 启动Sender客户端
-python3 runclient.py
+python3 sendclient.py
 ```
 
-用浏览器打开TCP_Client.html
+用浏览器打开Client目录下的TCP_Client.html
 
 浏览器控制台Console中显示Sender发送的内容
 
