@@ -1,7 +1,7 @@
 import socket, threading
 
-from Settings import port, server_host
-
+port = 12000
+server_host = "0.0.0.0"
 
 def run():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket initialization
@@ -16,3 +16,6 @@ def run():
 
     write_thread = threading.Thread(target=write)  # sending messages
     write_thread.start()
+
+if __name__ == '__main__':
+    run()
