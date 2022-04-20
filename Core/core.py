@@ -44,11 +44,11 @@ def run():  # accepting multiple receivers
     while True:
         client, address = server.accept()
         key = client.recv(1024)
-        print(key)
         try:
             value = key.decode()
+            print(value)
         except:
-            print(key)
+            print(f'ERROR MESSAGE: {key}')
             value = ""
         if "GET / HTTP/1.1" in value:
             print("====== Receive Connection Built ======")
