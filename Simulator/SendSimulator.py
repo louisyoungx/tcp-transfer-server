@@ -25,13 +25,14 @@ def run():
     def write():
         data = readData()
         index = 0
+        step = 10
         while True:  # message layout
             message = data[index]
             print(message)
-            if index >= len(data):
+            if index >= len(data) - 1 - step:
                 index = 0
             else:
-                index += 1
+                index += step
             client.send(message.encode())
             sleep(0.1)
 
