@@ -52,8 +52,11 @@ def run():  # accepting multiple receivers
             value = ""
         if "GET / HTTP/1.1" in value:
             print("====== Receive Connection Built ======")
-            Receiver = WebSocket(client)
-            Receiver.init(key)
+            try:
+                Receiver = WebSocket(client)
+                Receiver.init(key)
+            except:
+                continue
             try:
                 info = client.recv(8096)
             except Exception as e:
