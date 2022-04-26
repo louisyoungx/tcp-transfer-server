@@ -8,8 +8,8 @@ from Settings import debug_port as port
 def handleSend(client):
     while True:
         try:  # recieving valid messages from client
-            message = client.recv(1024).decode()
-            now = datetime.datetime.now ().strftime('%Y-%m-%d %H:%M:%S')
+            message = client.recv(1024)
+            now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             print(f'{now} - {message}')
         except:
             client.close()
