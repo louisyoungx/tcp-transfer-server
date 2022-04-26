@@ -1,8 +1,6 @@
 import socket
-import threading
 import datetime
 
-from Core.WebSocket.WebSocket import WebSocket
 from Settings import debug_port as port
 
 def handleSend(client):
@@ -10,7 +8,9 @@ def handleSend(client):
         try:  # recieving valid messages from client
             message = client.recv(1024)
             now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            print(f'{now} - {message}')
+            print(f'Time: {now}')
+            print(f'Code: {message}')
+            print(f'Data: {message.decode()}')
         except:
             client.close()
             print("====== Send Close ======")
