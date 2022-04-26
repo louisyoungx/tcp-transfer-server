@@ -9,8 +9,8 @@ def handleSend(client):
             message = client.recv(1024)
             now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             print(f'Time: {now}')
-            print(f'Code: {message}')
-            print(f'Data: {message.decode()}')
+            print(f'Code: \n{message}')
+            print(f'Data: \n{message.decode()}')
         except:
             client.close()
             print("====== Send Close ======")
