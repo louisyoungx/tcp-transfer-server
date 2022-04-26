@@ -1,7 +1,7 @@
 import socket
 import threading  # Libraries import
 
-from Core.WebSocket.WebSocket import WebSocket
+from WebSocket.WebSocket import WebSocket
 port = 12002
 
 def handleSend(client):
