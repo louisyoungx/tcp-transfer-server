@@ -1,8 +1,8 @@
 import socket
 import threading  # Libraries import
 
-from WebSocket.WebSocket import WebSocket
-port = 12002
+from Core.WebSocket.WebSocket import WebSocket
+from Settings import port
 
 def handleSend(client):
     while True:
@@ -15,7 +15,7 @@ def handleSend(client):
             print('Send Closed')
             break
 
-def run():  # accepting multiple receivers
+def track():  # accepting multiple receivers
     allow = ''  # LocalHost
     global receivers
     receivers = []
