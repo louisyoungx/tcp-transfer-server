@@ -156,6 +156,6 @@ WebSocket客户端、服务端通信的最小单位是帧（frame），由1个�
 
 ## 开源协议
 
-[MIT](https://gitee.com/louisyoung1/tcp_-transfer_-server/blob/master/LICENSE)
+[MIT](https://github.com/louisyoungx/tcp-transfer-server/blob/master/LICENSE)
 
 Copyright (c) 2021-present Louis Young
