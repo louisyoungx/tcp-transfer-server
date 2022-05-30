@@ -1,7 +1,11 @@
 import socket
 import datetime
 
-from Settings import debug_port as port
+from Config import config
+
+ADDRESS = config.Project.server_host
+DEBUG_PORT = config.Project.debug_port
+ALLOW = config.Project.allow_host
 
 def handleSend(client):
     while True:
@@ -18,14 +22,13 @@ def handleSend(client):
             break
 
 def track():  # accepting multiple receivers
-    allow = ''  # LocalHost
     global receivers
     receivers = []
-    print("====== Server {} Start ======".format(port))
+    print("====== Server {} Start ======".format(DEBUG_PORT))
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket initialization
-    server.bind((allow, port))  # binding limit and port to socket
+    server.bind((ADDRESS, DEBUG_PORT))  # binding limit and DEBUG_PORT to socket
     server.listen()
-    client, address = server.accept()
+    client, ADDRESS = server.accept()
     key = client.recv(1024)
     try:
         value = key.decode()

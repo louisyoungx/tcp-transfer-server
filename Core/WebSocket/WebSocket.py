@@ -1,7 +1,5 @@
-import socket
 import base64
 import hashlib
-from Settings import port, allow_host
 
 class WebSocket():
 
